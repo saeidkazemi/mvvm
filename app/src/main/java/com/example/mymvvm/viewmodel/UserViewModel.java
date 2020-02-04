@@ -63,7 +63,7 @@ public class UserViewModel extends BaseObservable {
         arrayListMutableLiveData.observe((LifecycleOwner) recyclerView.getContext(), new Observer<ArrayList<UserViewModel>>() {
             @Override
             public void onChanged(ArrayList<UserViewModel> userViewModels) {
-                UserAdapter userAdapter = new UserAdapter(userViewModels, position -> Log.e("eee",String.valueOf(position)));
+                UserAdapter userAdapter = new UserAdapter(userViewModels);
                 recyclerView.setLayoutManager(new LinearLayoutManager(recyclerView.getContext(),RecyclerView.VERTICAL,false));
                 recyclerView.setAdapter(userAdapter);
             }

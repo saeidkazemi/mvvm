@@ -18,9 +18,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.CustomHolder> 
 
     private ArrayList<UserViewModel> arrayList = new ArrayList<>();
     private LayoutInflater layoutInflater;
-    private ClickHandleInterface clickHandleInterface;
-    public UserAdapter(ArrayList<UserViewModel> arrayList, ClickHandleInterface clickHandleInterface) {
-        this.clickHandleInterface = clickHandleInterface;
+    public UserAdapter(ArrayList<UserViewModel> arrayList) {
         this.arrayList = arrayList;
     }
 
@@ -37,7 +35,6 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.CustomHolder> 
     public void onBindViewHolder(@NonNull CustomHolder holder, int position) {
         UserViewModel userViewModel = arrayList.get(position);
         holder.bind(userViewModel);
-        holder.itemView.setOnClickListener(v -> clickHandleInterface.setPosition(position));
     }
 
     @Override

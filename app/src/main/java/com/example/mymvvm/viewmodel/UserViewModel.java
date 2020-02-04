@@ -2,7 +2,6 @@ package com.example.mymvvm.viewmodel;
 
 import android.content.Context;
 import android.util.Log;
-import android.widget.Toast;
 
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
@@ -13,7 +12,6 @@ import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.mymvvm.ClickHandleInterface;
 import com.example.mymvvm.model.User;
 import com.example.mymvvm.remote.user.UsersRepository;
 import com.example.mymvvm.view.adapter.UserAdapter;
@@ -95,5 +93,11 @@ public class UserViewModel extends BaseObservable {
 
     public MutableLiveData<ArrayList<UserViewModel>> getArrayListMutableLiveData() {
         return arrayListMutableLiveData;
+    }
+
+    public void onClick(UserViewModel item)
+    {
+        Log.e("eee",item.name);
+        Log.e("eee",item.phone);
     }
 }
